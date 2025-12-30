@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bank PDF → CSV</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="app">
+        <div class="card">
+            <header class="card-header">
+                <h1>Convert Bank PDF to CSV</h1>
+                <p class="muted">Select your bank, upload a PDF statement, and get a CSV back.</p>
+            </header>
+
+            <form id="upload-form" class="form" autocomplete="off">
+                <label for="bank">Select Bank</label>
+                <select id="bank" required>
+                    <option value="">— choose bank —</option>
+                    <option value="kotak">Kotak</option>
+                    <option value="hdfc">HDFC</option>
+                    <option value="icici">ICICI</option>
+                    <option value="sbi">SBI</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="pdf">Upload PDF (only PDF)</label>
+                <div class="file-row">
+                    <label class="file-button" for="pdf" tabindex="0">Choose PDF</label>
+                    <input id="pdf" type="file" accept="application/pdf,.pdf" required />
+                    <div id="file-name" class="file-name">No file chosen</div>
+                </div>
+
+                <label>Does the PDF have a password?</label>
+                <div class="radio-row">
+                    <label class="radio"><input type="radio" name="pdf-password" value="no" checked> No</label>
+                    <label class="radio"><input type="radio" name="pdf-password" value="yes"> Yes</label>
+                </div>
+
+                <label for="pdf-pass" class="password-label">Password (if required)</label>
+                <input id="pdf-pass" type="password" class="password-input" placeholder="Enter PDF password" disabled />
+
+                <div class="actions">
+                    <button id="submit-btn" type="submit">Upload & Convert</button>
+                    <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+                </div>
+
+                <div id="status" class="status" role="status"></div>
+                <a id="download-link" class="download hidden">Download CSV</a>
+            </form>
+
+            <footer class="card-footer">
+                <small class="muted">Tip: Configure the API endpoint in <code>script.js</code>.</small>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

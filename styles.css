@@ -1,0 +1,285 @@
+:root {
+    --bg: #f4f6f8;
+    /* page background */
+    --card: #ffffff;
+    /* card background */
+    --accent: #2563eb;
+    /* blue accent */
+    --muted: #6b7280;
+    /* subtle text */
+    --glass: rgba(15, 23, 42, 0.04);
+    /* subtle input background */
+    --border: rgba(15, 23, 42, 0.06);
+    --success: #065f46;
+    --danger: #b91c1c;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+    color: #0f1724;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.app {
+    width: 100%;
+    max-width: 520px
+}
+
+.card {
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.card-header h1 {
+    margin: 0 0 6px;
+    font-size: 1.4rem
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 0.9rem
+}
+
+.form {
+    margin-top: 14px;
+    display: grid;
+    gap: 12px
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: block
+}
+
+select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: var(--glass);
+    color: inherit;
+    appearance: none;
+}
+
+input[type=file] {
+    /* visually hidden but accessible; use the label.file-button to trigger selection */
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.file-button {
+    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    display: inline-block;
+    text-align: center;
+}
+
+.file-row {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.file-name {
+    color: var(--muted);
+    font-size: 0.9rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.radio-row {
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.radio {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.95rem
+}
+
+.radio input {
+    width: 16px;
+    height: 16px
+}
+
+.password-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: var(--glass);
+    color: inherit
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px
+}
+
+button {
+    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed
+}
+
+.status {
+    margin-top: 8px;
+    color: var(--muted)
+}
+
+.download {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.06);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none
+}
+
+.card-footer {
+    margin-top: 14px;
+    text-align: center
+}
+
+.hidden {
+    display: none
+}
+
+/* simple spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: var(--accent);
+    animation: spin 1s linear infinite
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        padding: 18px;
+        align-items: flex-start;
+    }
+
+    .app {
+        padding-top: 28px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 10px;
+        width: 100%;
+        box-shadow: 0 6px 24px rgba(6, 12, 20, 0.5);
+    }
+
+    .card-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .file-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .file-button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .file-name {
+        margin-top: 4px;
+        font-size: 0.9rem;
+    }
+
+    .radio-row {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .password-input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        margin-top: 4px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+    }
+
+    .spinner {
+        margin-left: 0;
+        margin-top: 4px;
+        justify-self: center;
+    }
+
+    .download {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 12px;
+    }
+}
