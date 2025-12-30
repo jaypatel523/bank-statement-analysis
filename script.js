@@ -1,7 +1,7 @@
 // Configure this to your real API endpoint
 // For local development, point to the backend running on your machine. You can also use a relative
 // path ("/convert") if you serve frontend and backend from the same origin.
-const API_URL = "http://127.0.0.1:8000/convert"; // <-- replace with real endpoint
+const API_URL = "https://bank-statement-analysis-backend.onrender.com/convert"; // <-- replace with real endpoint
 
 const form = document.getElementById("upload-form");
 const bankInput = document.getElementById("bank");
